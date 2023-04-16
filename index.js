@@ -8,13 +8,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 import Routes from './route/route.js'
 
-
-const connection = process.env.DATABASE.replace(
-    "<PASSWORD>",
-    process.env.DATABASE_PASSWORD
-  );
-  mongoose.connect(connection).then((con) => console.log("DB connected"));
-
+const DB = process.env.DATABASE.replace(
+  "<PASSWORD>",
+  process.env.DATABASE_PASSWORD
+);
+mongoose.connect(DB).then((con) => console.log("DB connected"));
 
 const PORT = process.env.PORT || 3000
 
